@@ -49,7 +49,7 @@ const FiltrationCar = () => {
 
     return (
         <main className="rounded-md shadow-md bg-white p-3 flex flex-col gap-4 ">
-            <h1 className="text-blue-800 font-bold text-[30px]">Filter</h1>
+            <h1 className="text-main-100 font-bold text-[30px]">Filter</h1>
             <p className="text-gray-400 ">You can filtrate your search</p>
             <div className="grid grid-cols-1">
                 {

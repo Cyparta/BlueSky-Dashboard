@@ -24,7 +24,7 @@ const DriverTabs = async ({ params: { driverID } }) => {
     return (
         <Tabs defaultValue="PersonalInfo" className="w-full mt-5">
             <TabsList
-                className={`grid w-full grid-cols-4 md:w-[500px]`}>
+                className={`grid w-full grid-cols-3 md:w-[500px]`}>
                 <TabsTrigger value="PersonalInfo">PersonalInfo</TabsTrigger>
                 <TabsTrigger
                     value="rating">Rating
@@ -32,9 +32,9 @@ const DriverTabs = async ({ params: { driverID } }) => {
                 <TabsTrigger
                     value={"history"}>history
                 </TabsTrigger>
-                <TabsTrigger
+                {/* <TabsTrigger
                     value={"Last_Location"}>Last Location
-                </TabsTrigger>
+                </TabsTrigger> */}
             </TabsList>
             <TabsContent value="PersonalInfo"
                 className="max-h-screen overflow-auto">

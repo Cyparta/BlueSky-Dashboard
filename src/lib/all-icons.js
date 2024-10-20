@@ -28,6 +28,7 @@ import { MdContactPage } from "react-icons/md";
 import { MdSpatialTracking } from "react-icons/md";
 import { MdOutlineSend } from "react-icons/md";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { MdReport } from "react-icons/md";
 
 
 
@@ -65,6 +66,7 @@ const AllIcons = {
     spatial_tracking_icon: <MdSpatialTracking/>,
     send_icon: <MdOutlineSend/>,
     loading_icon: <AiOutlineLoading3Quarters/>,
+    report_icon: <MdReport/>,
 }
 
 export default AllIcons;

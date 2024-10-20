@@ -97,6 +97,13 @@ const SideNavItems = () => {
             children: [],
             active: "ads"
         },
+        {
+            title: "Report Cars",
+            link: "/reportCars",
+            icon: allIcons.report_icon,
+            children: [],
+            active: "reportCars"
+        },
         // {
         //     title: "Employees",
         //     link: "/employees",

@@ -41,7 +41,7 @@ const HeaderUpdateUser = ({ clientID}) => {
         <header className="flex items-center justify-between">
             <main className="flex flex-col gap-4">
                 <p>Client Profile</p>
-                <h1 className="text-blue-800 font-bold text-[25px]">{clientName}</h1>
+                <h1 className="text-main-100 font-bold text-[25px]">{clientName}</h1>
             </main>
             <main className="flex items-center gap-4">
 
@@ -50,7 +50,7 @@ const HeaderUpdateUser = ({ clientID}) => {
                 */}
 
                 <Link href={`/clients/updateClient/PROFILE${clientID}`}
-                    className={`${buttonVariants({ variant: "outline" })} text-blue-800  hover:bg-blue-500 hover:text-gray-200 text-[25px] px-5 `}>
+                    className={`${buttonVariants({ variant: "outline" })} text-main-100  hover:bg-blue-500 hover:text-gray-200 text-[25px] px-5 `}>
                     <span className="mr-1">{allIcons.edit_icon}</span>
                     Edit</Link>
                 <AlertDialogDemo

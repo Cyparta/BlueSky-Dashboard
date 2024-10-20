@@ -79,7 +79,7 @@ const TodaySelectionTable = () => {
                 label: item?.user_name, className: "text-[18px] w-[300px]  font-[600]"
             }, {
                 label: item?.user_phone + " SEK",
-                className: "text-[16px]  w-[200px] font-bold text-blue-800 line-clamp-1"
+                className: "text-[16px]  w-[200px] font-bold text-main-100 line-clamp-1"
             }, {
                 label:
                     <DropdownMenu>

@@ -12,7 +12,7 @@ const SideNav = () => {
             {/*Logo*/}
             <main className="flex items-center justify-center p-2  border border-t-0">
                 <Image
-                    src={"/logo.jpeg"}
+                    src={"/logo.png"}
                     alt="Logo Photo"
                     width={200}
                     height={23}

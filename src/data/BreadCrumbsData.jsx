@@ -761,7 +761,27 @@ const breadCrumbsData = [
                 showRightArrow: false,
             }
         ]
-    }
+    },
+    {
+        id: 34,
+        active_page: "reportCars",
+        children: [
+            {
+                id: 1,
+                title: "Menu",
+                link: "/",
+                active: false,
+                showRightArrow: true,
+            },
+            {
+                id: 2,
+                title: "report Cars",
+                link: "/reportCars",
+                active: true,
+                showRightArrow: false,
+            }
+        ]
+    },
 ];
 
 export default breadCrumbsData;

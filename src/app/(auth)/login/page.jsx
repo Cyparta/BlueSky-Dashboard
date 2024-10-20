@@ -49,7 +49,7 @@ export default function LoginPage() {
                     <InputDemo placeHolder="Enter Email" id="email" label="Email" style="md:gap-8 my-5" type="text" error={formik.errors.email} value={formik.values.email} onChange={formik.handleChange} />
                     <InputDemo placeHolder="Enter Password" id="password" label="Password" style="md:gap-8" type="password" error={formik.errors.password} value={formik.values.password} onChange={formik.handleChange} />
                     <div className='flex justify-center'>
-                        <button type="submit" disabled={loading} className="w-full bg-red-600 text-white p-2 rounded-md my-2 mt-5">{loading ? "Loading..." : 'Login'}</button>
+                        <button type="submit" disabled={loading} className="w-full bg-main-100 text-white p-2 rounded-md my-2 mt-5">{loading ? "Loading..." : 'Login'}</button>
                     </div>
                     {/* <div className='flex justify-center'>
                         <p>Don`t have account? <Link href={"/register"} className='text-red-600'>Sign up</Link></p>

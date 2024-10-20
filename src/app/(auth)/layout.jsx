@@ -13,10 +13,10 @@ export default function AuthLayout({ children }) {
     return (
         <main className="flex items-center justify-center text-gray-400 flex-col h-screen w-full gap-8">
             <Image
-                src={"/logo.jpeg"}
+                src={"/logo.png"}
                 alt="Logo Photo"
-                width={400}
-                height={64}
+                width={300}
+                height={54}
                 priority={true}
             />
             <Providers>

@@ -32,25 +32,25 @@ const ClientInfo = async ({ clientInfo }) => {
             <div
                 className="grid grid-cols-3 gap-12 text-xl pt-4 pb-8 border-b">
                 <p>Phone Number</p>
-                <span className={`col-span-2 text-green-700`}>{clientInfo?.user_phone}</span>
+                <span className={`col-span-2 text-main-100`}>{clientInfo?.user_phone}</span>
             </div>
 
 
-            <h1 className="text-2xl text-blue-800 font-semibold ">Account Address</h1>
+            <h1 className="text-2xl text-main-100 font-semibold ">Account Address</h1>
             <div
                 className="grid grid-cols-3 gap-12 text-xl pt-4 pb-8 border-b">
                 <p>Address</p>
                 <span className="col-span-2">Rydells väg 4, 835 32 Krokom, Sweden</span>
             </div>
 
-            <h1 className="text-2xl text-blue-800 font-semibold ">Invitations number</h1>
+            <h1 className="text-2xl text-main-100 font-semibold ">Invitations number</h1>
             <div
                 className="grid grid-cols-3 gap-12 text-xl pt-4 pb-8 border-b">
                 <p>Invited</p>
                 <span className="col-span-2">{clientInfo?.invited_clients_count} people</span>
             </div>
 
-            <h1 className="text-2xl text-blue-800 font-semibold ">Wallet</h1>
+            <h1 className="text-2xl text-main-100 font-semibold ">Wallet</h1>
 
             <div
                 className="grid grid-cols-3 gap-12 text-xl pt-4 pb-8 border-b">

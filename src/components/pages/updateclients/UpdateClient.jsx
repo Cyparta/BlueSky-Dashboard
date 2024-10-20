@@ -73,7 +73,7 @@ export default function UpdateClient({ params }) {
     
     return (
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3  md:p-8">
-            <h1 className="font-bold text-blue-800 text-[20px]">Add new Client</h1>
+            <h1 className="font-bold text-main-100 text-[20px] mb-3">Update Client</h1>
             <form onSubmit={formik.handleSubmit} >
                 <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {
@@ -104,7 +104,7 @@ export default function UpdateClient({ params }) {
                         className={`${buttonVariants({ variant: "outline" })} text-red-500  hover:bg-red-300`}>Cancel</Link>
                     <Button
                         type="submit"
-                        className="bg-blue-700"
+                        className="bg-main-100"
                         disabled={loading}
                     >
                         {loading ? "Loading..." : "Save client"}

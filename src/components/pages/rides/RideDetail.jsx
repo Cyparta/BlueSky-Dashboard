@@ -16,7 +16,7 @@ export default async function RideDetail({ ridesInfo }) {
                 className="flex items-center justify-center md:justify-between flex-col-reverse  md:flex-row gap-8 md:gap-0 rounded-t-md bg-white shadow-md p-3 ">
                 <div className="flex flex-row md:flex-col justify-center items-center md:items-start gap-8 md:gap-2">
                     <p className="text-[18px] font-semibold">Ride details</p>
-                    <h1 className="font-bold text-[30px] text-blue-800">#{ridesInfo?.id}</h1>
+                    <h1 className="font-bold text-[30px] text-main-100">#{ridesInfo?.id}</h1>
                 </div>
                 <ActionRidesBtn status={ridesInfo?.status} rideID={ridesInfo?.id} />
             </header>

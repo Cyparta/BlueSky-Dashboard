@@ -57,7 +57,7 @@ const AddNewAds = () => {
 
     return (
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3  md:p-8">
-            <h1 className="font-bold text-blue-800 text-[20px]">Add new Car</h1>
+            <h1 className="font-bold text-main-100 text-[20px]">Add new Car</h1>
             <form id="add-new-client" onSubmit={formik.handleSubmit} >
                 <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {

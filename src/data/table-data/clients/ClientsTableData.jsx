@@ -35,7 +35,9 @@ const ClientsTableData = () => {
             return () => clearTimeout(timer);
         }
     }, [searchValue]);
-
+    useEffect(()=>{
+        console.log("Clients",clients);
+    },[])
 
 
     // ---------------- Public Function ----------------------
@@ -181,12 +183,12 @@ const ClientsTableData = () => {
                         onChange={handleChangeSearch}
                         className="outline-0 w-[300px] md:w-[400px] flex-1 focus-visible:ring-1 focus-visible:ring-offset-0 border"
                     />
-                    <Link
+                    {/* <Link
                         href="/clients/addNewClient"
-                        className="bg-blue-900 text-gray-200 hover:bg-blue-900 text-[16px] px-4 py-2 rounded-md"
+                        className="bg-main-100 text-gray-200 hover:bg-blue-900 text-[16px] px-4 py-2 rounded-md"
                     >
                         Add New Client
-                    </Link>
+                    </Link> */}
                 </div>
             </header>
 

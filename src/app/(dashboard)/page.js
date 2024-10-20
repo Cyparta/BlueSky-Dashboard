@@ -51,13 +51,13 @@ export default async function Home() {
             <main className="flex flex-col gap-8">
                 <div className="flex flex-col lg:flex-row items-center justify-between  gap-5">
                     <div className="flex flex-col">
-                        <h1 className="font-mono text-[25px] text-blue-800 ">Hi, welcome back!</h1>
+                        <h1 className="font-mono text-[25px] text-main-100 ">Hi, welcome back!</h1>
                         <p className="text-gray-500">Your monitoring dashboard .</p>
                     </div>
                     <div className="flex items-center gap-8">
                         <div className="flex flex-col gap-3 items-center">
                             <p className="text-gray-500 text-center">Customer Ratings</p>
-                            <p className="flex items-center  font-bold text-blue-800">
+                            <p className="flex items-center  font-bold text-main-100">
                                 {Array.from({length: 5}).map((_, i) => (
                                     <span key={i}
                                           className={`text-[20px] ${Over_View_data?.bar_info?.average_rating > (i + 1) ? "text-yellow-600" : "text-gray-400"}`}>{allIcons?.Star_icon}</span>
@@ -108,14 +108,14 @@ export default async function Home() {
             {/* ------------  Tables  ------------------- */}
             <main className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <div className="bg-white rounded-md shadow-md flex flex-col gap-2 p-3 ">
-                    <h1 className="font-bold text-[20px] text-blue-800">Your Top Drivers</h1>
+                    <h1 className="font-bold text-[20px] text-main-100">Your Top Drivers</h1>
                     <p className="text-gray-500">Revenue based by drivers</p>
                     <div className="mt-5 border rounded-md">
                         <TableDemo Rows={Rows}/>
                     </div>
                 </div>
                 <div className="bg-white rounded-md shadow-md flex flex-col gap-2 p-3 col-span-1 md:col-span-2">
-                    <h1 className="font-bold text-[20px] text-blue-800">Your Most Recent Earnings</h1>
+                    <h1 className="font-bold text-[20px] text-main-100">Your Most Recent Earnings</h1>
                     <p className="text-gray-500">This is your most recent earnings for today&apos;s date.</p>
                     <div className="mt-5 border rounded-md">
                         <TableDemo Rows={RecentEarningsRows} headers={headers}/>
@@ -126,28 +126,28 @@ export default async function Home() {
             {/* ------------  Operating Systems and Analyst design  ------------------- */}
             <main className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <div className="bg-white rounded-md shadow-md flex flex-col gap-2 p-3 col-span-1 md:col-span-2">
-                    <h1 className="font-bold text-[20px] text-blue-800">Ride status</h1>
+                    <h1 className="font-bold text-[20px] text-main-100">Ride status</h1>
                     <p className="text-gray-500">Ride Status track your company rides status from this chart.</p>
                     <div className="flex items-center gap-5 flex-col md:flex-row my-4">
                         <div className="flex flex-col justify-center text-center">
-                            <p className="font-bold text-[25px] text-blue-800">{Over_View_data?.stats_totals?.success}</p>
+                            <p className="font-bold text-[25px] text-main-100">{Over_View_data?.stats_totals?.success}</p>
                             <div className="flex items-center justify-center gap-1">
                                 <p className="w-2 h-2 rounded-full bg-blue-900 mt-1"></p>
-                                <p className="text-blue-800 text-[18px]">success</p>
+                                <p className="text-main-100 text-[18px]">success</p>
                             </div>
                         </div>
                         <div className="flex flex-col justify-center text-center">
-                            <p className="font-bold text-[25px] text-blue-800">{Over_View_data?.stats_totals?.failed}</p>
+                            <p className="font-bold text-[25px] text-main-100">{Over_View_data?.stats_totals?.failed}</p>
                             <div className="flex items-center justify-center gap-1">
                                 <p className="w-2 h-2 rounded-full bg-red-500 mt-1"></p>
-                                <p className="text-blue-800 text-[18px]">Failed</p>
+                                <p className="text-main-100 text-[18px]">Failed</p>
                             </div>
                         </div>
                         <div className="flex flex-col justify-center text-center">
-                            <p className="font-bold text-[25px] text-blue-800">{Over_View_data?.stats_totals?.schedule}</p>
+                            <p className="font-bold text-[25px] text-main-100">{Over_View_data?.stats_totals?.schedule}</p>
                             <div className="flex items-center justify-center gap-1">
                                 <p className="w-2 h-2 rounded-full bg-orange-300 mt-1"></p>
-                                <p className="text-blue-800 text-[18px]">Scheduled</p>
+                                <p className="text-main-100 text-[18px]">Scheduled</p>
                             </div>
                         </div>
 
@@ -157,7 +157,7 @@ export default async function Home() {
                     </div>
                 </div>
                 <div className="bg-white rounded-md shadow-md flex flex-col gap-2 p-3 ">
-                    <h1 className="font-bold text-[20px] text-blue-800">Operating system</h1>
+                    <h1 className="font-bold text-[20px] text-main-100">Operating system</h1>
                     <p className="text-gray-500">statistics for the operating systems</p>
                     <div className="my-5">
                         <OperatingSystem os={Over_View_data?.devices}/>

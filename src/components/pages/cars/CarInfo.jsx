@@ -14,7 +14,7 @@ const CarInfo = ({ data }) => {
             <span className="col-span-2">{data?.company}</span>
         </div>
 
-        <h1 className="text-2xl text-blue-800 font-semibold uppercase ">Car Information</h1>
+        <h1 className="text-2xl text-main-100 font-semibold uppercase ">Car Information</h1>
         <div
             className="grid grid-cols-3 gap-12 text-xl pt-4">
             <p>Car Plate</p>

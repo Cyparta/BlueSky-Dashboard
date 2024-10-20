@@ -80,12 +80,12 @@ const UpdatePassword = () => {
                 <DialogTrigger asChild>
                     <div className="flex col-span-8 md:col-span-6 items-center rounded-md border-2 p-2 cursor-pointer">
                         <p className="flex-1">************</p>
-                        <p className="text-blue-800">{allIcons?.edit_icon}</p>
+                        <p className="text-main-100">{allIcons?.edit_icon}</p>
                     </div>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[750px]">
                     <DialogHeader>
-                        <DialogTitle className="text-blue-800 font-mono text-[20px] text-center">Change
+                        <DialogTitle className="text-main-100 font-mono text-[20px] text-center">Change
                             Password</DialogTitle>
                         <DialogDescription className="text-center">
                             Your password must be at least 8 characters long and contain at least one letter and one

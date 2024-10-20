@@ -61,7 +61,7 @@ export default function CommonDialog({
     <div className="flex items-center gap-2">
         <Button
           onClick={(e) => handleOpen("add", e)}
-          className="bg-blue-900 w-[122px] text-gray-200 capitalize flex items-center gap-2 font-medium"
+          className="bg-main-100 w-[122px] text-gray-200 capitalize flex items-center gap-2 font-medium"
         >
           {text}
         </Button>
@@ -94,7 +94,7 @@ export default function CommonDialog({
                   <p className="text-red-600">{errors.message}</p>
                 )}
                 <div className="flex items-center justify-end">
-                  <Button type="submit" className="bg-blue-900 text-gray-200">
+                  <Button type="submit" className="bg-main-100 text-gray-200">
                     Send
                   </Button>
                 </div>

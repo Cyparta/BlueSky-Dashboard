@@ -117,7 +117,7 @@ const GroupUpdate = ({ params }) => {
 
   return (
     <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3  md:p-8">
-      <h1 className="font-bold text-blue-800 text-[20px]">Update Group </h1>
+      <h1 className="font-bold text-main-100 text-[20px]">Update Group </h1>
       <form id="addGroup" onSubmit={formik.handleSubmit}>
         <InputDemo placeHolder="Group name" id="name" label="Group name"
           style="md:gap-8 gap-1 my-6" value={formik.values.name} error={formik.errors.name} onChange={formik.handleChange} />

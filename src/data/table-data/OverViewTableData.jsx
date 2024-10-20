@@ -1,15 +1,15 @@
 const OverViewTableData = (data) => {
     // ----------- Table Most Recent Earnings Header ------------
     const headers = [{
-        label: "Date", className: " border-r-2 border-gray-200 font-bold text-[18px] text-blue-800"
+        label: "Date", className: " border-r-2 border-gray-200 font-bold text-[18px] text-main-100"
 
     }, {
-        label: "Driver name", className: " border-r-2 border-gray-200 font-bold text-[18px] text-blue-800"
+        label: "Driver name", className: " border-r-2 border-gray-200 font-bold text-[18px] text-main-100"
 
     }, {
-        label: "Tatal fare", className: " border-r-2 border-gray-200 font-bold text-[18px] text-blue-800"
+        label: "Tatal fare", className: " border-r-2 border-gray-200 font-bold text-[18px] text-main-100"
     }, {
-        label: "His Money", className: "font-bold text-[18px] text-blue-800"
+        label: "His Money", className: "font-bold text-[18px] text-main-100"
     },];
 
     // ----------- Table Top Drivers Rows ------------
@@ -18,7 +18,7 @@ const OverViewTableData = (data) => {
             items: [{
                 label: item?.name, className: "text-[18px] font-[600]"
             }, {
-                label: item?.value + " SEK", className: "text-[16px] font-bold text-blue-800"
+                label: item?.value + " SEK", className: "text-[16px] font-bold text-main-100"
             },], tableBodyClassName: "flex justify-between w-full"
         }
     })

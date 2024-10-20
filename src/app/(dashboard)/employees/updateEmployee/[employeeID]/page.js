@@ -135,7 +135,7 @@ const UpdateEmployeePage = ({params}) => {
 
     return (
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3  md:p-8">
-            <h1 className="font-bold text-blue-800 text-[20px]">Update Employee</h1>
+            <h1 className="font-bold text-main-100 text-[20px]">Update Employee</h1>
             <form id="update-employee" onSubmit={formik.handleSubmit} >
                 <InputDemo placeHolder="Employee name" id="first_name" label="Employee name"
                     style="md:gap-8 gap-1 my-6" value={formik.values.first_name} error={formik.errors.first_name} onChange={formik.handleChange}/>

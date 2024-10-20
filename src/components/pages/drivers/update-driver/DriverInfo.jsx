@@ -34,7 +34,7 @@ const DriverInfo = ({DriverInfo}) => {
             <div
                 className="grid grid-cols-3 gap-12 text-xl pt-4">
                 <p>Phone Number</p>
-                <span className={`col-span-2 text-green-700`}>{DriverInfo?.user_phone}</span>
+                <span className={`col-span-2 text-main-100`}>{DriverInfo?.user_phone}</span>
             </div>
 
             <div
@@ -44,7 +44,7 @@ const DriverInfo = ({DriverInfo}) => {
             </div>
 
 
-            <h1 className="text-2xl text-blue-800 font-semibold uppercase ">Account Status</h1>
+            <h1 className="text-2xl text-main-100 font-semibold uppercase ">Account Status</h1>
 
             <div
                 className="grid grid-cols-3 gap-12 text-xl pt-4">
@@ -64,7 +64,7 @@ const DriverInfo = ({DriverInfo}) => {
                 <span className="col-span-2">**** **** **** *369</span>
             </div>
 
-            <h1 className="text-2xl text-black font-bold uppercase">Attachments</h1>
+            <h1 className="text-2xl text-main-100 font-bold uppercase">Attachments</h1>
 
             <Gallery Lic_back={DriverInfo?.id_back} Lic_front={DriverInfo?.id_front} />
         </section>

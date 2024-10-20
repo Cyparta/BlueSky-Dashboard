@@ -188,19 +188,19 @@ const EconomyCarTableData = ({ href }) => {
 
             {/* Table Header */}
             <header className="flex items-center justify-between w-full flex-col lg:flex-row">
-                <div className="flex items-center justify-between flex-col lg:flex-row py-4 gap-4 w-full">
+                <div className="flex items-center justify-end flex-col lg:flex-row py-4 gap-4 w-full">
                     <Input
                         placeholder="Search..."
                         value={searchValue}
                         onChange={handleChangeSearch}
                         className="outline-0 w-[300px] md:w-[400px] focus-visible:ring-1 focus-visible:ring-offset-0 border"
                     />
-                    <Link
+                    {/* <Link
                         href={`/${href.toLowerCase()}/addNewCar`}
                         className="bg-blue-900 text-gray-200 hover:bg-blue-900 text-[16px] px-4 py-2 rounded-md"
                     >
                         Add New Car
-                    </Link>
+                    </Link> */}
                 </div>
             </header>
 

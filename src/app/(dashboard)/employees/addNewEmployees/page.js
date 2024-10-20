@@ -127,7 +127,7 @@ const AddNewEmployeePage = () => {
     }, [groupSearch])
     return (
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3 md:p-8">
-            <h1 className="font-bold text-blue-800 text-[20px]">Add new Employee </h1>
+            <h1 className="font-bold text-main-100 text-[20px]">Add new Employee </h1>
             <form id="add-new-client" onSubmit={formik.handleSubmit} >
                 <InputDemo placeHolder="Employee name" id="full_name" label="Employee name" value={formik.values.full_name} error={formik.errors.full_name} onChange={formik.handleChange}
                     style="md:gap-8 gap-1 my-6" />
