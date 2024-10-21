@@ -104,13 +104,13 @@ const SideNavItems = () => {
             children: [],
             active: "reportCars"
         },
-        // {
-        //     title: "Employees",
-        //     link: "/employees",
-        //     icon: allIcons.users,
-        //     children: [],
-        //     active: "employees"
-        // },
+        {
+            title: "Employees",
+            link: "/employees",
+            icon: allIcons.users,
+            children: [],
+            active: "employees"
+        },
         // {
         //     title: "Companies",
         //     link: "/companies",

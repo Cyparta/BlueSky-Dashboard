@@ -79,14 +79,14 @@ const DriversTableData = () => {
     const data = drivers?.results?.map((driver) => {
         return {
             id: driver?.id,
-            rating: driver?.average_rating,
-            status: driver?.is_avliable ? "online" : "offLine",
-            phoneNumber: driver?.user_phone,
-            driverName: driver?.user_name,
-            phoneNumber: driver?.user_phone,
-            rating: driver?.average_rating,
-            carType: driver?.driver_type,
-            status: driver?.is_active ? "online" : "offLine",
+            // current_car: driver?.current_car,
+            is_available: driver?.is_available ? "online" : "offLine",
+            first_name: driver?.first_name,
+            phone: driver?.phone,
+            gender: driver?.gender,
+            is_verified: driver?.is_verified ? "true" : "false",
+            is_active: driver?.is_active ? "true" : "false",
+
         }
     })
 
@@ -95,48 +95,62 @@ const DriversTableData = () => {
             accessorKey: "id",
             header: "ID",
             hidden: true,
-            cell: ({ row }) => <Link href={`/drivers/updateDriver/${row.getValue("id")}?diverName=${row.getValue("driverName")}`}>{row.getValue("id")}</Link>
+            cell: ({ row }) => <Link href={`/drivers/updateDriver/${row.getValue("id")}?diverName=${row.getValue("first_name")}`}>{row.getValue("id")}</Link>
         },
         {
-            accessorKey: "driverName",
+            accessorKey: "first_name",
             header: "Driver Name",
             cell: ({ row }) => <Link
-                href={`/drivers/updateDriver/${row.getValue("id")}?diverName=${row.getValue("driverName")}`}>{row.getValue("driverName")}</Link>
+                href={`/drivers/updateDriver/${row.getValue("id")}?diverName=${row.getValue("first_name")}`}>{row.getValue("first_name")}</Link>
         },
         {
-            accessorKey: "phoneNumber",
+            accessorKey: "phone",
             header: "Phone number",
             cell: ({ row }) => (
-                <div className="capitalize">{row.getValue("phoneNumber")}</div>
+                <div className="capitalize">{row.getValue("phone")}</div>
+            ),
+        },
+        // {
+        //     accessorKey: "rating",
+        //     header: () => <div className="text-center">Rating</div>,
+        //     cell: ({ row }) => {
+        //         const rating = parseFloat(row.getValue("rating"))
+
+        //         // Format the rating as a dollar rating
+        //         const formatted = new Intl.NumberFormat("en-US", {
+        //             style: "currency",
+        //             currency: "USD",
+        //         }).format(rating)
+
+        //         return <div className="text-center font-medium">{parseFloat(row.getValue("rating")) ? formatted : "--"}</div>
+        //     },
+        // },
+        // {
+        //     accessorKey: "current_car",
+        //     header: () => <div className="text-center">Current Car</div>,
+        //     cell: ({ row }) => (
+        //         <div className="capitalize text-center">{row.getValue("current_car")}</div>
+        //     ),
+        // },
+        {
+            accessorKey: "is_available",
+            header: () => <div className="text-center">Available</div>,
+            cell: ({ row }) => (
+                <div className={`capitalize text-center ${row.getValue("is_available") === "online" ? "online" : "offline"}`}>{row.getValue("is_available")}</div>
             ),
         },
         {
-            accessorKey: "rating",
-            header: () => <div className="text-center">Rating</div>,
-            cell: ({ row }) => {
-                const rating = parseFloat(row.getValue("rating"))
-
-                // Format the rating as a dollar rating
-                const formatted = new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                }).format(rating)
-
-                return <div className="text-center font-medium">{parseFloat(row.getValue("rating")) ? formatted : "--"}</div>
-            },
-        },
-        {
-            accessorKey: "carType",
-            header: () => <div className="text-center">Car type</div>,
+            accessorKey: "is_verified",
+            header: () => <div className="text-center">Verified</div>,
             cell: ({ row }) => (
-                <div className="capitalize text-center">{row.getValue("carType")}</div>
+                <div className={`capitalize text-center ${row.getValue("is_verified") === "true" ? "online" : "offline"}`}>{row.getValue("is_verified")}</div>
             ),
         },
         {
-            accessorKey: "status",
-            header: () => <div className="text-center">Status</div>,
+            accessorKey: "is_active",
+            header: () => <div className="text-center">Active</div>,
             cell: ({ row }) => (
-                <div className={`capitalize text-center ${row.getValue("status") === "online" ? "online" : "offline"}`}>{row.getValue("status")}</div>
+                <div className={`capitalize text-center ${row.getValue("is_active") === "true" ? "online" : "offline"}`}>{row.getValue("is_active")}</div>
             ),
         },
         {

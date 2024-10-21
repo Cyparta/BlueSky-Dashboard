@@ -20,6 +20,7 @@ const ClientRating = ({ UserId, type }) => {
         } else if (type === 'driver') {
             dispatch(GetDriverRatings(UserId));
         }
+        console.log(clients)
     }, [])
 
     // --------------- return Loading If Data Not Fetched In Client Side  --------------------
@@ -45,16 +46,16 @@ const ClientRating = ({ UserId, type }) => {
                     <p className="flex items-center  font-bold text-main-100">
                         {Array.from({ length: 5 }).map((_, i) => (
                             <span key={i}
-                                className={`text-[30px] ${clients?.results?.at(0)?.average_rate >= i + 1 ? "text-main-100" : "text-yellow-200"}`}
+                                className={`text-[30px] ${clients?.average_rate >= i + 1 ? "text-yellow-200" : "text-main-100"}`}
                             >{AllIcons?.Star_icon}
                             </span>
                         ))}
                     </p>
-                    <p className="text-[30px] text-main-100 font-bold my-0 py-0">{clients?.results?.at(0)?.average_rate}/5</p>
+                    <p className="text-[30px] text-main-100 font-bold my-0 py-0">{clients?.average_rate}/5</p>
                     <p className="text-gray-500 my-0 py-0">avg rating</p>
                 </div>
                 <div className='col-span-4 md:col-span-2 lg:col-span-3 '>
-                    <p className="text-[35px] text-main-100 font-bold my-0 py-0">{clients?.count}</p>
+                    <p className="text-[35px] text-main-100 font-bold my-0 py-0">{clients?.rates?.length}</p>
                     <p className="text-gray-500 my-0 py-0">Total reviews</p>
                 </div>
             </main>

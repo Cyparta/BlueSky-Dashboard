@@ -22,7 +22,7 @@ export default function LoginPage() {
 
     const formik = useFormik({
         initialValues: {
-            email: "",
+            phone: "",
             password: ""
         },
         validationSchema: LoginSchema,
@@ -30,12 +30,12 @@ export default function LoginPage() {
             dispatch(LoginRequest(values)).then((res) => {
                 if (res.payload.token) {
                     setCookie('token', res.payload.token);
-                    router.push('/');
+                    router.push('/clients');
                     toast.success("Login Successful");
                     
                 } else {
                     toast.error(res.payload.message || "An error occurred");
-                    res.payload.message === "Incorrect password." ? setFieldError('password', res.payload.message) : setFieldError('email', res.payload.message)
+                    res.payload.message === "Incorrect password." ? setFieldError('password', res.payload.message) : setFieldError('phone', res.payload.message)
                 }
             })
         }
@@ -46,7 +46,7 @@ export default function LoginPage() {
                 <h2 className='text-3xl font-semibold my-1'>Login</h2>
                 <p className='text-gray-400'>Welcome back, please log in to your account</p>
                 <form id='login' className='my-3' onSubmit={formik.handleSubmit}>
-                    <InputDemo placeHolder="Enter Email" id="email" label="Email" style="md:gap-8 my-5" type="text" error={formik.errors.email} value={formik.values.email} onChange={formik.handleChange} />
+                    <InputDemo placeHolder="Enter Phone" id="phone" label="Phone" style="md:gap-8 my-5" type="text" error={formik.errors.phone} value={formik.values.phone} onChange={formik.handleChange} />
                     <InputDemo placeHolder="Enter Password" id="password" label="Password" style="md:gap-8" type="password" error={formik.errors.password} value={formik.values.password} onChange={formik.handleChange} />
                     <div className='flex justify-center'>
                         <button type="submit" disabled={loading} className="w-full bg-main-100 text-white p-2 rounded-md my-2 mt-5">{loading ? "Loading..." : 'Login'}</button>

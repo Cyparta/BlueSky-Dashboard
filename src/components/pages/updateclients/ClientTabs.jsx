@@ -6,14 +6,18 @@ import ClientInfo from "@/components/pages/updateclients/ClientInfo";
 import ClientRating from "@/components/pages/updateclients/ClientRating";
 import ClientHistoryTableData from "@/data/table-data/clients/ClientHistoryTableData";
 
-const ClientTabs = async ({ params: { clientID } }) => {
+const ClientTabs = async ({ params: { clientID } ,client}) => {
     // -------------------- Fetching Client Information in Server --------------------
-    const clientInfo = await GetSpecifDataInServer(`/dashboard/client/${clientID}/`);
+    const clientInfo = await GetSpecifDataInServer(`/dashboard/clients/${clientID}/`);
 
     return (
         <Tabs defaultValue="PersonalInfo" className="w-full mt-5">
             <TabsList
-                className={`grid w-full grid-cols-3 md:w-[400px]`}>
+                className={`grid w-full   ${client?'grid-cols-1 md:w-[100px]':'grid-cols-3 md:w-[300px]'}`}>
+                
+                {client ?<>
+                    <TabsTrigger value="PersonalInfo">PersonalInfo</TabsTrigger>
+                </> :<>
                 <TabsTrigger value="PersonalInfo">PersonalInfo</TabsTrigger>
                 <TabsTrigger
                     value="rating">Rating
@@ -21,6 +25,9 @@ const ClientTabs = async ({ params: { clientID } }) => {
                 <TabsTrigger
                     value={"history"}>history
                 </TabsTrigger>
+                </>
+                }
+                
             </TabsList>
             <TabsContent value="PersonalInfo"
                 className="max-h-screen overflow-auto">

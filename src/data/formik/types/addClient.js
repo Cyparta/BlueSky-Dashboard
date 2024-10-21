@@ -48,7 +48,7 @@ export const updateClientInputs = [
         disabled: true
     },
     {
-        id: "user_phone",
+        id: "phone",
         label: "Phone Number",
         placeholder: "Phone Number",
         type: "text",
@@ -56,14 +56,14 @@ export const updateClientInputs = [
         disabled: true
     },
     {
-        id: "user_name",
+        id: "first_name",
         label: "Client Name",
         placeholder: "Client Name",
         type: "text",
         style: "col-span-3 gap-1 "
     },
     {
-        id: "user_gender",
+        id: "gender",
         label: "Client Gender",
         placeholder: " Selected gender",
         type: "selected",
@@ -71,11 +71,27 @@ export const updateClientInputs = [
         selectItem: ["Male", "Female", "Other"],
     },
     {
-        id: "user_date_joined",
-        label: "Created at",
-        placeholder: "Created at",
+        id: "email",
+        label: "Email",
+        placeholder: "Email",
+        type: "email",
+        style: " gap-1  col-span-3 lg:col-span-3",
+        disabled: false
+    },
+    {
+        id: "address",
+        label: "Address",
+        placeholder: "Address",
         type: "text",
         style: " gap-1  col-span-3 lg:col-span-3",
-        disabled: true
+        disabled: false
+    },
+    {
+        id: "is_verified",
+        label: "Is verified",
+        placeholder: "Selected ",
+        type: "selected",
+        style: " gap-1  col-span-3 lg:col-span-3",
+        selectItem: ["true", "false"],
     },
 ]

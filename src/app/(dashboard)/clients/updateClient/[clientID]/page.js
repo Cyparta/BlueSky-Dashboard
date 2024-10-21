@@ -14,7 +14,7 @@ const UpdateClientWithIdPage = ({params}) => {
     return (
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3  md:p-8">
             <HeaderUpdateUser clientID={params.clientID} />
-            <ClientTabs params={params}/>
+            <ClientTabs params={params} client={true}/>
         </section>
     );
 };

@@ -8,15 +8,15 @@ export const updateDriverInputs = [
         disabled: true
     },
     {
-        id: "company",
-        label: "Company Number",
-        placeholder: "Company Number",
+        id: "first_name",
+        label: "First Name",
+        placeholder: "First Name",
         type: "text",
         style: "col-span-4 gap-1 ",
-        disabled: true
+        disabled: false
     },
     {
-        id: "user_phone",
+        id: "phone",
         label: "Phone Number",
         placeholder: "Phone Number",
         type: "text",
@@ -24,43 +24,44 @@ export const updateDriverInputs = [
         disabled: true
     },
     {
-        id: "user_name",
-        label: "Driver Name",
-        placeholder: "Driver Name",
+        id: "address",
+        label: "Address",
+        placeholder: "address",
         type: "text",
         style: "col-span-4 gap-1 "
     },
     {
-        id: "user_gender",
+        id: "gender",
         label: "Driver Gender",
-        placeholder: " Selected gender",
+        placeholder: "Driver Gender",
         type: "selected",
         style: " gap-1  col-span-3 lg:col-span-2",
-        selectItem: ["Male", "Female", "Other"],
+        selectItem: ["male", "female", "other"],
     },
     {
-        id: "driver_type",
-        label: "Driver Type",
-        placeholder: "Driver Type",
+        id: "is_verified",
+        label: "Is Verified",
+        placeholder: "Is Verified",
         type: "selected",
         style: " gap-1  col-span-3 lg:col-span-2",
-        selectItem: ["Economy", "Large", "Vip", "Pet"],
+        selectItem: ["true", "false"],
     },
     {
         id: "is_active",
-        label: "Account Status",
-        placeholder: "Account Status",
+        label: "Is Active",
+        placeholder: "Is Active",
         type: "selected",
         style: " gap-1  col-span-3 lg:col-span-2",
         selectItem: ["true", "false"],
     },
     {
-        id: "is_avliable",
-        label: "Driver Status",
-        placeholder: "Driver Status",
-        type: "selected",
+        id: "is_available",
+        label: "Is Available",
+        placeholder: "Driver Availability",
+        type: "text",
         style: " gap-1  col-span-3 lg:col-span-2",
-        selectItem: ["true", "false"],
+        // selectItem: ["true", "false"],
+        disabled: true
     },
     {
         id: "balance",
@@ -71,7 +72,7 @@ export const updateDriverInputs = [
         disabled: true
     },
     {
-        id: "date_joined",
+        id: "created_at",
         label: "Created at",
         placeholder: "Created at",
         type: "text",

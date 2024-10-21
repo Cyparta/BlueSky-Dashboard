@@ -9,17 +9,16 @@ const token =getCookie("token");
 export const GetAllClients = createAsyncThunk(
     "clients/GetAllClients",
     async (data, { getState, rejectWithValue, dispatch }) => {
-        console.log(data);
-        console.log(token)
+
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/client/?search=${data?.search}&&page=${data?.page || 1}`, {
+            const response = await fetch(`${BaseUrl}/dashboard/clients/?search=${data?.search}&&page=${data?.page || 1}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Token ${token}`
                 },
             });
-            console.log(response);
+            // console.log(response);
             return response.json();
         } catch (error) {
             return rejectWithValue(error.message);
@@ -31,7 +30,7 @@ export const GetSpecificClient = createAsyncThunk(
     "clients/GetSpecificClient",
     async (id, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/client/${id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/clients/${id}/`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -86,7 +85,7 @@ export const GetDriverRatings = createAsyncThunk(
     "clients/GetDriverRatings",
     async (id, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/info/${id}/reviews/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/drivers/${id}/rates/`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -131,7 +130,7 @@ export const DeleteClient = createAsyncThunk(
     "clients/DeleteClient",
     async (id, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/client/${id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/clients/${id}/`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -151,7 +150,7 @@ export const UpdateClients = createAsyncThunk(
     "clients/UpdateClients",
     async (data, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/client/${data?.id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/clients/${data?.id}/`, {
                 method: "PATCH",
                 body: JSON.stringify(data?.body) || {},
                 headers: {

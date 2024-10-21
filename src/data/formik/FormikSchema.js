@@ -27,14 +27,24 @@ export const AddClientSchema = yup.object().shape({
 
 
 export const UpdateClientSchema = yup.object().shape({
-    user_name: yup.string().required("Client Name is required"),
+    first_name: yup.string().required("Client Name is required"),
+    phone: yup.number().required("Phone Number is required"),
+    email: yup.string().email("Invalid email").required("Email is required"),
+    balance: yup.number().required("Balance is required"),
+    is_verified: yup.boolean().required("Client Status is required"),
+    is_active: yup.boolean().required("Client Activation is required"),
+    gender: yup.string().required("gender is required"),
+    address: yup.string().required("Address is required"),
 });
 
 
 export const UpdateDriverSchema = yup.object().shape({
-    user_name: yup.string().required("Driver Name is required"),
+    first_name: yup.string().required("Driver Name is required"),
     is_active: yup.boolean().required("Driver Status is required"),
-    is_avliable: yup.boolean().required("Driver Availability is required"),
+    is_verified: yup.boolean().required("Driver Availability is required"),
+    gender: yup.string().required("gender is required"),
+    balance: yup.number().required("Balance is required"),
+
 });
 
 export const UpdateCarSchema = yup.object().shape({
@@ -123,7 +133,7 @@ export const AddNewEmployeeSchema = yup.object().shape({
 });
 
 export const LoginSchema = yup.object().shape({
-    email: yup.string().email("Invalid Email").required("Email is required"),
+    phone: yup.string().required("Phone Number is required"),
     password: yup.string().required("Password is required"),
 })
 

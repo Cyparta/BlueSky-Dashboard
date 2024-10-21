@@ -66,8 +66,15 @@ export default function UpdateDriver({ params }) {
     // ------------- Global Effects ----------------------
     useEffect(() => {
         dispatch(GetSpecificDriver(DriverID)).then((driver) => {
-            setValuesInFormik(formik, driver?.payload)
+            const normalizedData = {
+                ...driver?.payload,
+                gender: driver?.payload?.gender?.toLowerCase(),  // Normalize gender to lowercase
+                is_verified: driver?.payload?.is_verified?.toString().toLowerCase()  // Convert to string and lowercase
+            };
+    
+            setValuesInFormik(formik, normalizedData);
         })
+        
     }, []);
 
     return (

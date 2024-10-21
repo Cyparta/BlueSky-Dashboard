@@ -11,7 +11,7 @@ export const GetAllDrivers = createAsyncThunk(
     "drivers/GetAllDrivers",
     async (data, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/info/?search=${data?.search}&&page=${data?.page || 1}`, {
+            const response = await fetch(`${BaseUrl}/dashboard/drivers/?search=${data?.search}&&page=${data?.page || 1}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const GetSpecificDriver = createAsyncThunk(
     "drivers/GetSpecificDriver",
     async (id, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/info/${id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/drivers/${id}/`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const DeleteDrivers = createAsyncThunk(
     "drivers/DeleteDrivers",
     async (id, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/info/${id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/drivers/${id}/`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export const GetDriverHistory = createAsyncThunk(
     "drivers/GetDriverHistory",
     async (data, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/info/${data?.id}/rides/?page=${data?.page || 1}`, {
+            const response = await fetch(`${BaseUrl}/dashboard/drivers/${data?.id}/rides/?page=${data?.page || 1}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export const UpdateDriverReducer = createAsyncThunk(
     "drivers/UpdateDriverReducer",
     async (data, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/info/${data?.id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/drivers/${data?.id}/`, {
                 method: "PATCH",
                 body: JSON.stringify(data?.body) || {},
                 headers: {

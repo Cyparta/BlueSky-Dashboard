@@ -69,10 +69,14 @@ const EmployeeTableData = () => {
     const data = employees?.results?.map((employee) => {
         return {
             id: employee?.id,
-            employeeName: employee?.user?.first_name,
-            phoneNumber: employee?.user?.phone,
-            numberOfPermissions: employee?.user?.user_permissions?.length,
-            createdAt: new Date(employee?.user?.date_joined).toLocaleDateString() + " , " + new Date(employee?.user?.date_joined).toLocaleTimeString(),
+            first_name: employee?.first_name,
+            phone: employee?.phone,
+            gender: employee?.gender,
+            email: employee?.email,
+            is_verified: employee?.is_verified,
+            address: employee?.address,
+            accept_cash: employee?.accept_cash,
+            balance: employee?.balance,
         }
     }) || [];
 
@@ -81,16 +85,15 @@ const EmployeeTableData = () => {
         {
             accessorKey: "id",
             header: "ID",
-            cell: ({ row }) => <Link href={`/employees/updateEmployee?employeeId=${row.getValue("id")}`}>{row.getValue("id")}</Link>
+            cell: ({ row }) => <div className="text-center font-medium">{row.getValue("id")}</div>
         },
         {
-            accessorKey: "employeeName",
+            accessorKey: "first_name",
             header: "Employee name",
-            cell: ({ row }) => <Link
-                href={`/employees/updateEmployee?employeeId=${row.getValue("id")}`}>{row.getValue("employeeName")}</Link>
+            cell: ({ row }) => <div className="text-center font-medium">{row.getValue("first_name")}</div>
         },
         {
-            accessorKey: "phoneNumber",
+            accessorKey: "phone",
             header: ({ column }) => {
                 return (
                     <Button
@@ -101,23 +104,43 @@ const EmployeeTableData = () => {
                     </Button>
                 )
             },
-            cell: ({ row }) => <div className="lowercase">{row.getValue("phoneNumber")}</div>,
+            cell: ({ row }) => <div className="lowercase">{row.getValue("phone")}</div>,
         },
         {
-            accessorKey: "createdAt",
-            header: () => <div className="text-center">Created at</div>,
+            accessorKey: "gender",
+            header: () => <div className="text-center">gender</div>,
             cell: ({ row }) => {
-                return <div className="text-center font-medium">{row.getValue("createdAt")}</div>
+                return <div className="text-center font-medium">{row.getValue("gender")}</div>
             },
         }, {
-            accessorKey: "numberOfPermissions",
-            header: () => <div className="text-center font-medium">Number Of Permissions</div>,
+            accessorKey: "email",
+            header: () => <div className="text-center font-medium">Email</div>,
             cell: ({ row }) => {
-                return <div className="flex items-center justify-center w-full">
-                    <p className="font-bold  rounded-full border w-[50px] h-[50px] flex items-center justify-center" >+ {row.getValue("numberOfPermissions")}</p>
+                return <div className="text-center font-medium">
+                     {row.getValue("email")}
                 </div>
             },
         },
+        {
+            accessorKey: "is_verified",
+            header: () => <div className="text-center font-medium">Is verified</div>,
+            cell: ({ row }) => {
+                return <div className="text-center font-medium">
+                     {row.getValue("is_verified")}
+                </div>
+            },
+        },
+        {
+            accessorKey: "accept_cash",
+            header: () => <div className="text-center font-medium">Accept cash</div>,
+            cell: ({ row }) => {
+                return <div className="text-center font-medium">
+                     {row.getValue("accept_cash")}
+                </div>
+            },
+        },
+        
+
         {
             id: "actions",
             enableHiding: true,

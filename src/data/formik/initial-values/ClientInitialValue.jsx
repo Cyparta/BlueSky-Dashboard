@@ -9,10 +9,14 @@ export const AddClientInitialValue = {
 
 export const UpdateClientInitialValue = {
     id: "",
-    user_name: "",
-    user_phone: "",
-    user_gender: "Male",
+    first_name: "",
+    phone: "",
+    gender: "",
     user_date_joined: "",
+    email: "",
+    address: "",
+    balance: "",
+    is_verified: "",
 }
 
 

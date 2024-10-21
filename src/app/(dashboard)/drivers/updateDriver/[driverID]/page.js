@@ -16,7 +16,7 @@ const UpdateDriverPage = ({params}) => {
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3  md:p-8">
             <HeaderUpdateDriver driverID={params.driverID} />
             <DriverTabs params={params}/>
-            <SendMessageDriver driverID={params.driverID}/>
+            {/* <SendMessageDriver driverID={params.driverID}/> */}
         </section>
     );
 };

@@ -13,7 +13,7 @@ const DriverInfo = ({DriverInfo}) => {
                     className="w-[110px] h-[110px]"
                 >
                     <AvatarImage
-                        src={DriverInfo?.user_image}
+                        src={DriverInfo?.image}
                         alt="Driver's Image"
                         className="cursor-pointer"
                     />
@@ -21,12 +21,12 @@ const DriverInfo = ({DriverInfo}) => {
                 </Avatar>
                 <div className="flex-1 grid grid-cols-1 lg:grid-cols-6 gap-6 w-full">
                     <div className="flex items-center gap-2 lg:col-span-3">
-                        <p className="text-xl text-gray-700 text-[30px]">{allIcons.personal_id_icon}</p>
-                        <h2 className="text-xl">{DriverInfo?.user_name} #{DriverInfo?.user}</h2>
+                        {/* <p className="text-xl text-gray-700 text-[30px]">{allIcons.personal_id_icon}</p> */}
+                        <h2 className="text-xl">{DriverInfo?.first_name} </h2>
                     </div>
                     <div className="flex items-center gap-2 lg:col-span-3">
                         <p className="text-xl text-[35px]">{allIcons.credit_card_icon}</p>
-                        <h2 className="text-xl">Joined {`${new Date(DriverInfo?.date_joined).toLocaleDateString()}  -   ${new Date(DriverInfo?.date_joined).toLocaleTimeString()}`} </h2>
+                        <h2 className="text-xl">Joined {`${new Date(DriverInfo?.created_at).toLocaleDateString()}  -   ${new Date(DriverInfo?.created_at).toLocaleTimeString()}`} </h2>
                     </div>
                 </div>
             </main>
@@ -34,39 +34,44 @@ const DriverInfo = ({DriverInfo}) => {
             <div
                 className="grid grid-cols-3 gap-12 text-xl pt-4">
                 <p>Phone Number</p>
-                <span className={`col-span-2 text-main-100`}>{DriverInfo?.user_phone}</span>
+                <span className={`col-span-2 text-main-100`}>{DriverInfo?.phone}</span>
             </div>
 
             <div
-                className="grid grid-cols-3 gap-12 text-xl pb-8 border-b">
-                <p>Company Number</p>
-                <span className="col-span-2">{DriverInfo?.company}</span>
-            </div>
-
-
-            <h1 className="text-2xl text-main-100 font-semibold uppercase ">Account Status</h1>
-
-            <div
-                className="grid grid-cols-3 gap-12 text-xl pt-4">
+                className="grid grid-cols-3 gap-12 text-xl py-4 border-b">
                 <p>Status</p>
-                <span className="col-span-2">{DriverInfo?.is_avliable  ? "Online" :"Offline"}</span>
+                <span className="col-span-2">{DriverInfo?.is_available  ? "Online" :"Offline"}</span>
             </div>
 
             <div
                 className="grid grid-cols-3 gap-12 text-xl pb-8 border-b">
-                <p>Car Type</p>
-                <span className="col-span-2">{DriverInfo?.driver_type}</span>
+                <p>Invited By</p>
+                <span className="col-span-2">{(DriverInfo?.invited_by) || 'N/A'}</span>
             </div>
 
             <div
                 className="grid grid-cols-3 gap-12 text-xl pb-8 border-b">
-                <p>Saved Credit</p>
-                <span className="col-span-2">**** **** **** *369</span>
+                <p>Location</p>
+                <span className="col-span-2">{(DriverInfo.location) || 'N/A'}</span>
             </div>
+            <div
+                className="grid grid-cols-3 gap-12 text-xl pb-8 border-b">
+                <p>Last shift end</p>
+                <span className="col-span-2">{(DriverInfo.last_shift_end) || 'N/A'}</span>
+            </div>
+            <div
+                className="grid grid-cols-3 gap-12 text-xl pb-8 border-b">
+                <p>Last shift start</p>
+                <span className="col-span-2">{(DriverInfo.last_shift_start) || 'N/A'}</span>
+            </div>
+            <div
+                className="grid grid-cols-3 gap-12 text-xl pb-8 border-b">
+                <p>Points</p>
+                <span className="col-span-2">{(DriverInfo.points) || 'N/A'}</span>
+            </div>
+            {/* <h1 className="text-2xl text-main-100 font-bold uppercase">Attachments</h1>
 
-            <h1 className="text-2xl text-main-100 font-bold uppercase">Attachments</h1>
-
-            <Gallery Lic_back={DriverInfo?.id_back} Lic_front={DriverInfo?.id_front} />
+            <Gallery Lic_back={DriverInfo?.id_back} Lic_front={DriverInfo?.id_front} /> */}
         </section>
     );
 };

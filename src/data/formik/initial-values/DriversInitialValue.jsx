@@ -1,13 +1,13 @@
 
 export const UpdateDriverInitialValue = {
     id: "",
-    user_name: "",
-    user_phone: "",
-    user_gender: "Male",
-    date_joined: "",
-    is_active:"",
-    is_avliable:"",
-    driver_type:"",
-    company:"",
-    balance:""
+    first_name: "",
+    phone: "",
+    gender: "",
+    address: "",
+    created_at: "",
+    is_active: "",
+    is_available: "",
+    is_verified: "",
+    balance: ""
 }

@@ -78,11 +78,13 @@ const ClientsTableData = () => {
     const data = clients?.results?.map((client) => {
         return {
             id: client?.id,
-            amount: client?.points,
-            // gender: client?.user_gender,
-            ClientPhone: client?.user_phone,
-            clientName: client?.user_name,
-            amount: client?.points,
+            address: client?.address,
+            gender: client?.gender,
+            phone: client?.phone,
+            first_name: client?.first_name,
+            email: client?.email,
+            balance: client?.balance,
+
         }
     });
 
@@ -90,23 +92,23 @@ const ClientsTableData = () => {
         {
             accessorKey: "id",
             header: "ID",
-            cell: ({ row }) => <Link href={`/clients/updateClient/${row.getValue("id")}?clientName=${row.getValue("clientName")}`}>{row.getValue("id")}</Link>
+            cell: ({ row }) => <Link href={`/clients/updateClient/${row.getValue("id")}?clientName=${row.getValue("first_name")}`}>{row.getValue("id")}</Link>
         },
         {
-            accessorKey: "clientName",
+            accessorKey: "first_name",
             header: "client Name",
             cell: ({ row }) => <Link
-                href={`/clients/updateClient/${row.getValue("id")}?clientName=${row.getValue("clientName")}`}>{row.getValue("clientName")}</Link>
+                href={`/clients/updateClient/${row.getValue("id")}?clientName=${row.getValue("first_name")}`}>{row.getValue("first_name")}</Link>
         },
-        // {
-        //     accessorKey: "gender",
-        //     header: "Gender",
-        //     cell: ({ row }) => (
-        //         <div className="capitalize">{row.getValue("gender")}</div>
-        //     ),
-        // },
         {
-            accessorKey: "ClientPhone",
+            accessorKey: "gender",
+            header: "Gender",
+            cell: ({ row }) => (
+                <div className="capitalize">{row.getValue("gender") || 'N/A'}</div>
+            ),
+        },
+        {
+            accessorKey: "phone",
             header: ({ column }) => {
                 return (
                     <Button
@@ -117,21 +119,20 @@ const ClientsTableData = () => {
                     </Button>
                 )
             },
-            cell: ({ row }) => <div className="lowercase">{row.getValue("ClientPhone")}</div>,
+            cell: ({ row }) => <div className="lowercase">{row.getValue("phone") || 'N/A'}</div>,
         },
         {
-            accessorKey: "amount",
-            header: () => <div className="text-right">Amount</div>,
+            accessorKey: "address",
+            header: () => <div className="">Address</div>,
             cell: ({ row }) => {
-                const amount = parseFloat(row.getValue("amount"))
-
-                // Format the amount as a dollar amount
-                const formatted = new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                }).format(amount)
-
-                return <div className="text-right font-medium">{formatted}</div>
+                return <div className="">{row.getValue("address") || 'N/A'}</div>
+            },
+        },
+        {
+            accessorKey: "email",
+            header: () => <div className="">Email</div>,
+            cell: ({ row }) => {
+                return <div className="">{row.getValue("email") ||'N/A'}</div>
             },
         },
         {

@@ -10,8 +10,7 @@ import Maps from "@/components/Maps/Map";
 
 const DriverTabs = async ({ params: { driverID } }) => {
     // -------------------- Fetching Client Information in Server --------------------
-    const driverInfo = await GetSpecifDataInServer(`/dashboard/info/${driverID}/`);
-
+    const driverInfo = await GetSpecifDataInServer(`/dashboard/drivers/${driverID}/`);
 
     const drivers = [
         {
@@ -41,7 +40,7 @@ const DriverTabs = async ({ params: { driverID } }) => {
                 <DriverInfo DriverInfo={driverInfo} />
             </TabsContent>
             <TabsContent value="rating">
-                <ClientRating UserId={driverInfo?.user} type="driver" />
+                <ClientRating UserId={driverInfo?.id} type="driver" />
             </TabsContent>
             <TabsContent value="history">
                 <DriverHistoryTableData driverID={driverInfo?.id} />
