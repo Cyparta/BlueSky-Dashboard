@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className={`${cairo.className} bg-lightgray`}>
                 {children}
-                <Toaster />
+                <Toaster richColors={true}/>
             </body>
         </html>
     );

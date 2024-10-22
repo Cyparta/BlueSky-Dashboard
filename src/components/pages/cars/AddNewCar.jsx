@@ -18,10 +18,6 @@ import { addCarInput } from "@/data/formik/types/addCar";
 import { CarSchema } from "@/data/formik/FormikSchema";
 
 
-
-
-
-
 const AddNewWCar = ({ href }) => {
 
     const dispatch = useDispatch();
@@ -34,8 +30,6 @@ const AddNewWCar = ({ href }) => {
             dispatch(AddNewCar(CreateFormData(values)));
         }
     });
-
-
 
     useEffect(() => {
         if (cars === 201) {

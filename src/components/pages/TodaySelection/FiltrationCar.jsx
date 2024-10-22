@@ -31,18 +31,23 @@ const FiltrationCar = () => {
             image: PetsCar
         },
         {
-            name: "Economy",
-            Filter: "Economy",
+            name: "Black",
+            Filter: "Black",
             image: EconomyCar
         },
         {
-            name: "VIP",
-            Filter: "Vip",
+            name: "Lux",
+            Filter: "Lux",
             image: VipCar
         },
         {
-            name: "Large",
-            Filter: "Large",
+            name: "Sky",
+            Filter: "Sky",
+            image: LargeCar
+        },
+        {
+            name: "Suv",
+            Filter: "Suv",
             image: LargeCar
         }
     ]

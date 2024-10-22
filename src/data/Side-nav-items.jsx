@@ -51,24 +51,24 @@ const SideNavItems = () => {
             icon: allIcons.car_icon,
             children: [
                 {
-                    title: "Economy",
-                    link: "/economy",
-                    active: "economy",
+                    title: "Black",
+                    link: "/black",
+                    active: "black",
                 },
                 {
-                    title: "Large",
-                    link: "/large",
-                    active: "large",
+                    title: "Suv",
+                    link: "/suv",
+                    active: "suv",
                 },
                 {
-                    title: "Vip",
-                    link: "/vip",
-                    active: "vip",
+                    title: "Lux",
+                    link: "/lux",
+                    active: "lux",
                 },
                 {
-                    title: "Pet",
-                    link: "/pet",
-                    active: "pet",
+                    title: "Sky",
+                    link: "/sky",
+                    active: "sky",
                 }
             ],
             accordingId: "item-1",

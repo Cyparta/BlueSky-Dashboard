@@ -3,7 +3,7 @@ import HeaderUpdateCar from "@/components/pages/cars/HeaderUpdateCar";
 import {CarTabs} from "@/components/pages/cars/CarTabs";
 
 
-const UpdateEconomyCarPage = ({params}) => {
+const UpdateLargeCarPage = ({params}) => {
 
 
     if (params.carID.includes("PROFILE")) {
@@ -20,4 +20,4 @@ const UpdateEconomyCarPage = ({params}) => {
     );
 };
 
-export default UpdateEconomyCarPage;
+export default UpdateLargeCarPage;

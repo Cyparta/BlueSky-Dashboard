@@ -84,7 +84,7 @@ export const UpdateEmployee = createAsyncThunk(
     "/employees/UpdateEmployee",
     async ({values,id},{ rejectWithValue  }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/employee/${id}`, {
+            const response = await fetch(`${BaseUrl}/dashboard/employee/${id}/`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -103,10 +103,11 @@ export const AddEmployee = createAsyncThunk(
     "employees/addNewEmployee",
     async (body, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/register/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/employee/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Token ${token}`,
                 },
                 body: JSON.stringify(body),
             });

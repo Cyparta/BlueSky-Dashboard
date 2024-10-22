@@ -1,7 +1,7 @@
 import AddNewWCar from '@/components/pages/cars/AddNewCar'
 
 const AddNewPetCarPage = () => {
-    return <AddNewWCar href="pet"   />
+    return <AddNewWCar href="sky"   />
 };
 
 export default AddNewPetCarPage;

@@ -4,11 +4,12 @@ import * as yup from "yup";
 
 // the below code fragment can be found in:
 export const CarSchema = yup.object().shape({
-    company: yup.string().required("Company ID is required"),
     car_model: yup.string().required("Car Model is required"),
+    car_type: yup.string().required("Car Type is required"),
     car_color: yup.string().required("Car Color is required"),
     car_number: yup.string().required("Car Number is required"),
     car_image: yup.mixed().required("Car Image is required"),
+    car_license: yup.mixed().required("Car License is required"),
 });
 
 
@@ -139,8 +140,10 @@ export const LoginSchema = yup.object().shape({
 
 export const UpdatedEmployeeSchema = yup.object().shape({
     first_name: yup.string().required("First Name is required"),
+    last_name: yup.string().required("Last Name is required"),
     phone: yup.string().required("Phone Number is required"),
-    user_permissions: yup.array(),
+    is_verified: yup.boolean().required("Is Verified is required"),
+    accept_cash: yup.boolean().required("Accept Cash is required"),
 });
 
 export const AddMessageSchema = yup.object().shape({

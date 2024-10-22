@@ -1,11 +1,11 @@
 
-export const metadata =  {
-    title: "ECONOMY CAR PAGE",
+export const metadata = {
+    title: "ADD NEW BLACK CAR",
     description: "Blue_sky - Rent the perfect motorhome or campervan in America",
 };
 
 
-const EconomyLayout = ({children}) => {
+const AddNewBlackCarLayout = ({children}) => {
     return (
         <>
             {children}
@@ -13,4 +13,4 @@ const EconomyLayout = ({children}) => {
     );
 }
 
-export default EconomyLayout;
+export default AddNewBlackCarLayout;

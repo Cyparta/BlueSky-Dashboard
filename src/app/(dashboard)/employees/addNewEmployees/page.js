@@ -29,47 +29,62 @@ const AddNewEmployeePage = () => {
 
     const formik = useFormik({
         initialValues: {
-            full_name: "",
+            first_name: "",
+            last_name:"",
             phone: "",
-            email: "",
             password: "",
-            user_permissions: [],
-            groups: [],
-            gender: "Male",
+            location:"",
+            // user_permissions: [],
+            // groups: [],
+            // gender: "Male",
         },
         validationSchema: yup.object().shape({
             phone: yup.number().required("Phone number required"),
             password: yup.string().required("Password required"),
-            full_name: yup.string().required("Full name required"),
-            email: yup.string().email("Invalid email").required("Email is required"),
+            first_name: yup.string().required("First name required"),
+            last_name: yup.string().required("Last name required"),
+            location: yup.string().required("Location required"),   
         }),
         onSubmit: (values) => {
-            if (values.user_permissions.length === 0) {
-                toast.warning("Please select at least one permission", {
-                    action: {
-                        label: "Close",
-                        onClick: () => toast.dismiss(),
-                    },
-                })
-            } else if (values.groups.length === 0) {
-                toast.warning("Please select at least one group", {
-                    action: {
-                        label: "Close",
-                        onClick: () => toast.dismiss(),
-                    },
-                })
-            } else {
+            // if (values.user_permissions.length === 0) {
+            //     toast.warning("Please select at least one permission", {
+            //         action: {
+            //             label: "Close",
+            //             onClick: () => toast.dismiss(),
+            //         },
+            //     })
+            // } else if (values.groups.length === 0) {
+            //     toast.warning("Please select at least one group", {
+            //         action: {
+            //             label: "Close",
+            //             onClick: () => toast.dismiss(),
+            //         },
+            //     })
+            // } else {
                 values.phone = values.phone.toString();
+                console.log(values)
                 dispatch(AddEmployee(values)).then((res) => {
-                    if (res.payload.status == 201) {
-                        toast.success(`${res.payload.message}`, {
+                    console.log(res)
+                    console.log(typeof res.payload.phone)
+                    if(typeof res.payload.phone=== 'object'){
+                        toast.error('user with this phone already exists.', {
+                            action: {
+                                label: "Close",
+                                onClick: () => toast.dismiss(),
+                            },
+                        })
+                        formik.setFieldError('phone', 'user with this phone already exists.')
+                        return;
+                    }
+                    if (res.payload.id)  {
+                        toast.success(`Employee added successfully`, {
                             action: {
                                 label: "Close",
                                 onClick: () => toast.dismiss(),
                             },
                         })
                     } else {
-                        toast.error(res.payload.message, {
+                        toast.error(res.payload.detail, {
                             action: {
                                 label: "Close",
                                 onClick: () => toast.dismiss(),
@@ -77,7 +92,7 @@ const AddNewEmployeePage = () => {
                         })
                     }
                 })
-            }
+            // }
 
         }
     });
@@ -88,55 +103,57 @@ const AddNewEmployeePage = () => {
         { e.target.id == "group" ? setGroupSearch(e.target.value) : setSearchValue(e.target.value) }
     }
 
-    const AddActivePermissionsInFormik = (checked, id) => {
-        if (checked) {
-            formik.setFieldValue("user_permissions", [...formik.values.user_permissions, id])
-        } else {
-            formik.setFieldValue("user_permissions", formik.values.user_permissions.filter((item) => item !== id))
-        }
-    }
-    const AddActiveGroupsInFormik = (checked, id) => {
-        if (checked) {
-            formik.setFieldValue("groups", [...formik.values.groups, id])
-        } else {
-            formik.setFieldValue("groups", formik.values.groups.filter((item) => item !== id))
-        }
-    }
+    // const AddActivePermissionsInFormik = (checked, id) => {
+    //     if (checked) {
+    //         formik.setFieldValue("user_permissions", [...formik.values.user_permissions, id])
+    //     } else {
+    //         formik.setFieldValue("user_permissions", formik.values.user_permissions.filter((item) => item !== id))
+    //     }
+    // }
+    // const AddActiveGroupsInFormik = (checked, id) => {
+    //     if (checked) {
+    //         formik.setFieldValue("groups", [...formik.values.groups, id])
+    //     } else {
+    //         formik.setFieldValue("groups", formik.values.groups.filter((item) => item !== id))
+    //     }
+    // }
 
     // ################## Public Effects ##########################
-    useEffect(() => {
-        if (searchValue.length > 0) {
-            const timer = setTimeout(() => {
-                dispatch(GetAllPermissions(searchValue))
-            }, 1000);
-            return () => clearTimeout(timer);
-        } else {
-            dispatch(GetAllPermissions(searchValue))
-        }
-    }, [searchValue])
+    // useEffect(() => {
+    //     if (searchValue.length > 0) {
+    //         const timer = setTimeout(() => {
+    //             dispatch(GetAllPermissions(searchValue))
+    //         }, 1000);
+    //         return () => clearTimeout(timer);
+    //     } else {
+    //         dispatch(GetAllPermissions(searchValue))
+    //     }
+    // }, [searchValue])
 
-    useEffect(() => {
-        if (groupSearch.length > 0) {
-            const timer = setTimeout(() => {
-                dispatch(GetAllGroups(groupSearch))
-            }, 1000);
-            return () => clearTimeout(timer);
-        } else {
-            dispatch(GetAllGroups(groupSearch))
-        }
-    }, [groupSearch])
+    // useEffect(() => {
+    //     if (groupSearch.length > 0) {
+    //         const timer = setTimeout(() => {
+    //             dispatch(GetAllGroups(groupSearch))
+    //         }, 1000);
+    //         return () => clearTimeout(timer);
+    //     } else {
+    //         dispatch(GetAllGroups(groupSearch))
+    //     }
+    // }, [groupSearch])
     return (
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3 md:p-8">
             <h1 className="font-bold text-main-100 text-[20px]">Add new Employee </h1>
             <form id="add-new-client" onSubmit={formik.handleSubmit} >
-                <InputDemo placeHolder="Employee name" id="full_name" label="Employee name" value={formik.values.full_name} error={formik.errors.full_name} onChange={formik.handleChange}
+                <InputDemo placeHolder="First name" id="first_name" label="First name" value={formik.values.first_name} error={formik.errors.first_name} onChange={formik.handleChange}
                     style="md:gap-8 gap-1 my-6" />
-                <InputDemo placeHolder="Employee Email" id="email" label="Employee Email" value={formik.values.email} error={formik.errors.email} onChange={formik.handleChange}
+                <InputDemo placeHolder="Last name" id="last_name" label="Last name" value={formik.values.last_name} error={formik.errors.last_name} onChange={formik.handleChange}
                     style="md:gap-8 gap-1 my-6" />
                 <InputDemo placeHolder="+1 (555) 000-0000" id="phone" label="Phone Number" style="md:gap-8 gap-1 "
-                    type="number" value={formik.values.phone} error={formik.errors.phone} onChange={formik.handleChange} />
-                <InputDemo placeHolder="**********" id="password" label="Password" type="password" style="md:gap-8 gap-1 my-6" value={formik.values.password} error={formik.errors.password} onChange={formik.handleChange} />
-                <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                    type="text" value={formik.values.phone} error={formik.errors.phone} onChange={formik.handleChange} />
+                <InputDemo placeHolder="Location" id="location" label="Location" style="md:gap-8 gap-1 mt-6 "
+                    type="text" value={formik.values.location} error={formik.errors.location} onChange={formik.handleChange} />
+                <InputDemo placeHolder="**********" id="password" label="Password" type="text" style="md:gap-8 gap-1 my-6" value={formik.values.password} error={formik.errors.password} onChange={formik.handleChange} />
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
                     <h1 className="font-bold text-[25px]">Permissions</h1>
                     <InputDemo placeHolder="Search..." value={searchValue} onChange={handleChangeSearch} style="w-full gird-col-1" />
                 </div>
@@ -179,7 +196,7 @@ const AddNewEmployeePage = () => {
                                 )
                             }) : <p className="col-span-3 h-full flex items-center justify-center text-center text-[25px] font-bold border rounded-md">No Groups found</p>
                     }
-                </div>
+                </div> */}
                 <div className="w-full flex items-center justify-end gap-7 " variant="outline">
                     <Link href="/employees"
                         className={`${buttonVariants({ variant: "outline" })} text-red-500  hover:bg-red-300`}>Cancel</Link>

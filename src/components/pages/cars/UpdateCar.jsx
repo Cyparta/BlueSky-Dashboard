@@ -16,11 +16,6 @@ import { updateCarInputs } from "@/data/formik/types/addCar";
 import { UpdateCarSchema } from "@/data/formik/FormikSchema";
 import { CompareValues, setValuesInFormik } from "@/lib/utils";
 
-
-
-
-
-
 export default function UpdateCar({ href, params }) {
     const CarID = params?.carID?.split("PROFILE").at(1)
 
@@ -68,12 +63,16 @@ export default function UpdateCar({ href, params }) {
     // ------------- Global Effects ----------------------
     useEffect(() => {
         dispatch(GetSpecificCar(CarID)).then((car) => {
-            setValuesInFormik(formik, car?.payload)
+            const normalizedData = {
+                ...car?.payload,
+                is_available: car?.payload?.driver?.is_available?.toString().toLowerCase()  // Convert to string and lowercase
+            };
+            setValuesInFormik(formik, normalizedData)
         })
     }, []);
     return (
         <section className="flex gap-2 flex-col bg-white rounded-md shadow-md my-4 p-3  md:p-8">
-            <h1 className="font-bold text-main-100 text-[20px]">Update Economy Car </h1>
+            <h1 className="font-bold text-main-100 text-[20px]">Update Car </h1>
             <form onSubmit={formik.handleSubmit} >
                 <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {

@@ -24,7 +24,7 @@ import allIcons from "@/lib/all-icons";
 
 
 
-const EconomyCarTableData = ({ href }) => {
+const CarTableData = ({ href }) => {
 
     const [searchValue, setSearchValue] = useState("");
 
@@ -90,22 +90,22 @@ const EconomyCarTableData = ({ href }) => {
             type: car?.car_type,
             color: car?.car_color,
             carPlate: car?.car_number,
-            isAvailable: car?.is_available,
+            is_active: car?.is_active,
             image: car?.car_image,
         }
     });
+    // cell: ({ row }) => <Link href={`/${href.toLowerCase()}/updateCar/${row.getValue("id")}?CarPlate=${row.getValue("carPlate")}`}>{row.getValue("id")}</Link>
 
     const columns = [
         {
             accessorKey: "id",
             header: "ID",
-            cell: ({ row }) => <Link href={`/${href.toLowerCase()}/updateCar/${row.getValue("id")}?CarPlate=${row.getValue("carPlate")}`}>{row.getValue("id")}</Link>
+            cell: ({ row }) => <div >{row.getValue("id")}</div>
         },
         {
             accessorKey: "carPlate",
             header: "Car Plate",
-            cell: ({ row }) => <Link
-                href={`/${href.toLowerCase()}/updateCar/${row.getValue("id")}?CarPlate=${row.getValue("carPlate")}`}>{row.getValue("carPlate")}</Link>
+            cell: ({ row }) => <div>{row.getValue("carPlate")}</div>
         },
         {
             accessorKey: "model",
@@ -129,10 +129,10 @@ const EconomyCarTableData = ({ href }) => {
             ),
         },
         {
-            accessorKey: "isAvailable",
-            header: "Car Is Available",
+            accessorKey: "is_active",
+            header: "Car Is Active",
             cell: ({ row }) => (
-                <div className={`capitalize text-center ${row.getValue("isAvailable") ? "completed" : "canceled"}`}>{row.getValue("isAvailable") ? "Available" : "Not Available"}</div>
+                <div className={`capitalize text-center ${row.getValue("is_active") ? "completed" : "canceled"}`}>{row.getValue("is_active") ? "Active" : "Not Active"}</div>
             ),
         },
         {
@@ -195,12 +195,12 @@ const EconomyCarTableData = ({ href }) => {
                         onChange={handleChangeSearch}
                         className="outline-0 w-[300px] md:w-[400px] focus-visible:ring-1 focus-visible:ring-offset-0 border"
                     />
-                    {/* <Link
+                    <Link
                         href={`/${href.toLowerCase()}/addNewCar`}
                         className="bg-blue-900 text-gray-200 hover:bg-blue-900 text-[16px] px-4 py-2 rounded-md"
                     >
                         Add New Car
-                    </Link> */}
+                    </Link>
                 </div>
             </header>
 
@@ -209,4 +209,4 @@ const EconomyCarTableData = ({ href }) => {
     )
 };
 
-export default EconomyCarTableData;
+export default CarTableData;

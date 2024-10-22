@@ -1,10 +1,10 @@
 export const metadata = {
-    title: "Update Economy Car",
+    title: "Update Black Car",
     description: "Blue_sky - Rent the perfect motorhome or campervan in America",
 };
 
 
-const UpdateEconomyCarLayout = ({children}) => {
+const UpdateBlackCarLayout = ({children}) => {
     return (
         <>
             {children}
@@ -12,4 +12,4 @@ const UpdateEconomyCarLayout = ({children}) => {
     );
 }
 
-export default UpdateEconomyCarLayout;
+export default UpdateBlackCarLayout;

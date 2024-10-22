@@ -26,7 +26,7 @@ const EmployeeTableData = () => {
     const { employees, loading, error } = useSelector(state => state.employees);
 
     useEffect(() => {
-        if (searchValue.length > 0) {
+        if (searchValue.length >= 0) {
             const timer = setTimeout(() => {
                 dispatch(GetAllEmployees({ search: searchValue }));
             }, 1000);
@@ -70,12 +70,13 @@ const EmployeeTableData = () => {
         return {
             id: employee?.id,
             first_name: employee?.first_name,
+            last_name: employee?.last_name,
             phone: employee?.phone,
-            gender: employee?.gender,
-            email: employee?.email,
-            is_verified: employee?.is_verified,
+            // gender: employee?.gender,
+            // email: employee?.email,
+            is_verified: employee?.is_verified? 'Yes' : 'No',
             address: employee?.address,
-            accept_cash: employee?.accept_cash,
+            accept_cash: employee?.accept_cash? 'Yes' : 'No',
             balance: employee?.balance,
         }
     }) || [];
@@ -85,12 +86,17 @@ const EmployeeTableData = () => {
         {
             accessorKey: "id",
             header: "ID",
-            cell: ({ row }) => <div className="text-center font-medium">{row.getValue("id")}</div>
+            cell: ({ row }) => <div className=" font-medium">{row.getValue("id")}</div>
         },
         {
             accessorKey: "first_name",
-            header: "Employee name",
-            cell: ({ row }) => <div className="text-center font-medium">{row.getValue("first_name")}</div>
+            header: "First name",
+            cell: ({ row }) => <div className="font-medium">{row.getValue("first_name")}</div>
+        },
+        {
+            accessorKey: "last_name",
+            header: "Last name",
+            cell: ({ row }) => <div className="font-medium">{row.getValue("last_name")}</div>
         },
         {
             accessorKey: "phone",
@@ -106,21 +112,21 @@ const EmployeeTableData = () => {
             },
             cell: ({ row }) => <div className="lowercase">{row.getValue("phone")}</div>,
         },
-        {
-            accessorKey: "gender",
-            header: () => <div className="text-center">gender</div>,
-            cell: ({ row }) => {
-                return <div className="text-center font-medium">{row.getValue("gender")}</div>
-            },
-        }, {
-            accessorKey: "email",
-            header: () => <div className="text-center font-medium">Email</div>,
-            cell: ({ row }) => {
-                return <div className="text-center font-medium">
-                     {row.getValue("email")}
-                </div>
-            },
-        },
+        // {
+        //     accessorKey: "gender",
+        //     header: () => <div className="text-center">gender</div>,
+        //     cell: ({ row }) => {
+        //         return <div className="text-center font-medium">{row.getValue("gender")}</div>
+        //     },
+        // }, {
+        //     accessorKey: "email",
+        //     header: () => <div className="text-center font-medium">Email</div>,
+        //     cell: ({ row }) => {
+        //         return <div className="text-center font-medium">
+        //              {row.getValue("email") ||'N/A'}
+        //         </div>
+        //     },
+        // },
         {
             accessorKey: "is_verified",
             header: () => <div className="text-center font-medium">Is verified</div>,
@@ -134,6 +140,7 @@ const EmployeeTableData = () => {
             accessorKey: "accept_cash",
             header: () => <div className="text-center font-medium">Accept cash</div>,
             cell: ({ row }) => {
+               
                 return <div className="text-center font-medium">
                      {row.getValue("accept_cash")}
                 </div>

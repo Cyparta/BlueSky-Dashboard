@@ -1,11 +1,11 @@
 export  const addCarInput = [
-    {
-        id: "company",
-        label: "Company ID",
-        placeholder: "Company ID",
-        type: "text",
-        style: "col-span-3 gap-1 "
-    },
+    // {
+    //     id: "company",
+    //     label: "Company ID",
+    //     placeholder: "Company ID",
+    //     type: "text",
+    //     style: "col-span-3 gap-1 "
+    // },
     {
         id: "car_model",
         label: "Car Model",
@@ -27,6 +27,23 @@ export  const addCarInput = [
         type: "text",
         style: "col-span-3 gap-1 "
     },
+    
+    // {
+    //     id: "is_active",
+    //     label: "Car Active",
+    //     placeholder: "Select Car Activity",
+    //     type: "selected",
+    //     style: " gap-1  col-span-3 lg:col-span-1",
+    //     selectItem: [ "true","false"],
+    // },
+    {
+        id: "car_type",
+        label: "Car Type",
+        placeholder: "Select Car Type",
+        type: "selected",
+        style: "gap-1  col-span-3 ",
+        selectItem: ["BLACK", "SUV", "LUX", "SKY"],
+    },
     {
         id: "car_image",
         label: "Car Image",
@@ -36,28 +53,11 @@ export  const addCarInput = [
 
     },
     {
-        id: "is_active",
-        label: "Car Active",
-        placeholder: "Select Car Activity",
-        type: "selected",
-        style: " gap-1  col-span-3 lg:col-span-1",
-        selectItem: [ "true","false"],
-    },
-    {
-        id: "car_type",
-        label: "Car Type",
-        placeholder: "Select Car Type",
-        type: "selected",
-        style: "gap-1  col-span-3 lg:col-span-1",
-        selectItem: ["Economy", "Large", "Vip", "Pet"],
-    },
-    {
-        id: "is_available",
-        label: "Car Available",
-        placeholder: "Select Car Availability",
-        type: "selected",
-        style: " gap-1  col-span-3 lg:col-span-1",
-        selectItem: ["true", "false"],
+        id: "car_license",
+        label: "Car License",
+        placeholder: " Car License",
+        type: "file",
+        style: "col-span-3 gap-1  cursor-pointer",
     },
 ]
 
@@ -65,18 +65,10 @@ export  const addCarInput = [
 export const updateCarInputs = [
     {
         id: "id",
-        label: "Driver Id",
-        placeholder: "Driver Id",
+        label: "Car Id",
+        placeholder: "Car Id",
         type: "text",
         style: "col-span-3 gap-1",
-        disabled: true
-    },
-    {
-        id: "company",
-        label: "Company Number",
-        placeholder: "Company Number",
-        type: "text",
-        style: "col-span-3 gap-1 ",
         disabled: true
     },
     {
@@ -106,12 +98,12 @@ export const updateCarInputs = [
         placeholder: "Driver Type",
         type: "selected",
         style: " gap-1  col-span-3 lg:col-span-1",
-        selectItem: ["Economy", "Large", "Vip", "Pet"],
+        selectItem: ["BLACK", "LUX", "SKY", "SUV"],
     },
     
     {
         id: "is_active",
-        label: "Account Status",
+        label: "Car Status",
         placeholder: "Account Status",
         type: "selected",
         style: " gap-1  col-span-3 lg:col-span-1",

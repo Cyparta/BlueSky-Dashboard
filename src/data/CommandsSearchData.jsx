@@ -17,36 +17,36 @@ const commandsSearchLinks = [{
         link: "/requests"
     },
     {
-        title: "Economy Cars",
-        link: "/economy"
+        title: "Black Cars",
+        link: "/black"
     },
     {
-        title: "Add new Economy Car",
-        link: "/economy/addNewCar"
+        title: "Add new Black Car",
+        link: "/black/addNewCar"
     },
     {
-        title: "Large Cars",
-        link: "/large"
+        title: "Suv Cars",
+        link: "/suv"
     },
     {
-        title: "Add new Large Car",
-        link: "/large/addNewCar"
+        title: "Add new Suv Car",
+        link: "/suv/addNewCar"
     },
     {
-        title: "Vip Cars",
-        link: "/vip"
+        title: "Lux Cars",
+        link: "/lux"
     },
     {
-        title: "Add new Vip Car",
-        link: "/vip/addNewCar"
+        title: "Add new Lux Car",
+        link: "/lux/addNewCar"
     },
     {
-        title: "Pet Cars",
-        link: "/pet"
+        title: "Sky Cars",
+        link: "/sky"
     },
     {
-        title: "Add new Pet Car",
-        link: "/pet/addNewCar"
+        title: "Add new Sky Car",
+        link: "/sky/addNewCar"
     },
     {
         title: "Employees",

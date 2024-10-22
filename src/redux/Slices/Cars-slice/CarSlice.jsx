@@ -11,7 +11,7 @@ export const GetAllCars = createAsyncThunk(
     "cars/GetAllCars",
     async (data, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/car/?car_type=${data?.filter}&&search=${data?.search}&&page=${data?.page || 1}`, {
+            const response = await fetch(`${BaseUrl}/dashboard/cars/?car_type=${data?.filter}&&search=${data?.search}&&page=${data?.page || 1}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const GetSpecificCar = createAsyncThunk(
     "cars/GetSpecificCar",
     async (id, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/car/${id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/cars/${id}/`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export const DeleteCar = createAsyncThunk(
     "cars/DeleteCar",
     async (id, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/car/${id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/cars/${id}/`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export const AddNewCar = createAsyncThunk(
     "cars/AddNewCar",
     async (formData, { rejectWithValue  }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/car/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/cars/`, {
                 method: "POST",
                 body: formData || {},
                 headers: {
@@ -110,7 +110,7 @@ export const UpdateCarReducer = createAsyncThunk(
     "cars/UpdateCarReducer",
     async (data, { getState, rejectWithValue, dispatch }) => {
         try {
-            const response = await fetch(`${BaseUrl}/dashboard/car/${data?.id}/`, {
+            const response = await fetch(`${BaseUrl}/dashboard/cars/${data?.id}/`, {
                 method: "PATCH",
                 body: JSON.stringify(data?.body) || {},
                 headers: {

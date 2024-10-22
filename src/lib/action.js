@@ -19,7 +19,7 @@ export const GetDataWithHourRevalidate = async (path) => {
     };
 
     const res = await fetch(`${BASE_URL}${path}`, options);
-// console.log(res);
+console.log(res);
     if (res.status === 401) {
         throw new Error("Unauthorized");
     }else if(res.status !== 200 && res.status !== 401){

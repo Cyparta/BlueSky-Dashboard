@@ -15,7 +15,10 @@ export const EmployeeDetailInitialValue = {
 
 export const EmployeeUpdateInitialValue={
     first_name: "",
+    last_name: "",
     phone: "",
-    user_permissions:[],
-    groups: [],
+    is_verified:"",
+    accept_cash:"",
+    // user_permissions:[],
+    // groups: [],
 }

@@ -121,7 +121,7 @@ const breadCrumbsData = [
     },
     {
         id: 7,
-        active_page: "economy",
+        active_page: "black",
         children: [
             {
                 id: 1,
@@ -133,14 +133,14 @@ const breadCrumbsData = [
             {
                 id: 2,
                 title: "Cars",
-                link: "/economy",
+                link: "/black",
                 active: false,
                 showRightArrow: true,
             },
             {
                 id: 3,
-                title: "Economy Car",
-                link: "/economy",
+                title: "Black Car",
+                link: "/black",
                 active: true,
                 showRightArrow: false,
             }
@@ -160,7 +160,7 @@ const breadCrumbsData = [
             {
                 id: 2,
                 title: "Cars",
-                link: "/economy",
+                link: "/black",
                 active: false,
                 showRightArrow: true,
             },
@@ -175,7 +175,7 @@ const breadCrumbsData = [
     },
     {
         id: 8,
-        active_page: "large",
+        active_page: "suv",
         children: [
             {
                 id: 1,
@@ -187,14 +187,14 @@ const breadCrumbsData = [
             {
                 id: 2,
                 title: "Cars",
-                link: "/large",
+                link: "/suv",
                 active: false,
                 showRightArrow: true,
             },
             {
                 id: 3,
-                title: "Large Car",
-                link: "/large",
+                title: "Suv Car",
+                link: "/suv",
                 active: true,
                 showRightArrow: false,
             }
@@ -202,7 +202,7 @@ const breadCrumbsData = [
     },
     {
         id: 9,
-        active_page: "vip",
+        active_page: "lux",
         children: [
             {
                 id: 1,
@@ -214,14 +214,14 @@ const breadCrumbsData = [
             {
                 id: 2,
                 title: "Cars",
-                link: "/vip",
+                link: "/lux",
                 active: false,
                 showRightArrow: true,
             },
             {
                 id: 3,
                 title: "VIP Car",
-                link: "/vip",
+                link: "/lux",
                 active: true,
                 showRightArrow: false,
             }
@@ -229,7 +229,7 @@ const breadCrumbsData = [
     },
     {
         id: 11,
-        active_page: "pet",
+        active_page: "sky",
         children: [
             {
                 id: 1,
@@ -241,14 +241,14 @@ const breadCrumbsData = [
             {
                 id: 2,
                 title: "Cars",
-                link: "/pet",
+                link: "/sky",
                 active: false,
                 showRightArrow: true,
             },
             {
                 id: 3,
                 title: "Pet Car",
-                link: "/pet",
+                link: "/sky",
                 active: true,
                 showRightArrow: false,
             }
@@ -268,14 +268,14 @@ const breadCrumbsData = [
             {
                 id: 2,
                 title: "Cars",
-                link: "/economy",
+                link: "/black",
                 active: false,
                 showRightArrow: true,
             },
             {
                 id: 3,
                 title: "Add New Car",
-                link: "/economy/addNewCar",
+                link: "/black/addNewCar",
                 active: true,
                 showRightArrow: false,
             }

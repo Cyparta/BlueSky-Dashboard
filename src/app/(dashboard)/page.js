@@ -8,42 +8,42 @@ import allIcons from "@/lib/all-icons";
 
 export default async function Home() {
     // ----------- Get Data In server Side ---------------
-    const Over_View_data = await GetDataWithHourRevalidate("/dashboard/overview/");
+    // const Over_View_data = await GetDataWithHourRevalidate("/dashboard/overview/");
 
-    // ----------- Row And Header For Top Drivers and most recent earnings Tables ---------------
-    const {Rows, headers, RecentEarningsRows} = OverViewTableData(Over_View_data);
+    // // ----------- Row And Header For Top Drivers and most recent earnings Tables ---------------
+    // const {Rows, headers, RecentEarningsRows} = OverViewTableData(Over_View_data);
 
-    // ----------- Cards Information Data  ---------------
-    const All_average_Earnings =[
-        {
-            "id": 1,
-            "title": "TOTAL EARNINGS",
-            "value": Over_View_data?.totals?.total_earnings + " SEK",
-            "diffValue": Over_View_data?.totals?.total_earnings_diff,
-            "color": "bg-gradient-to-b from-green-400 to-teal-600"
-        },
-        {
-            "id": 2,
-            "title": "Total Rides",
-            "value": Over_View_data?.totals?.total_rides + " Rides",
-            "diffValue": Over_View_data?.totals?.total_rides_diff,
-            "color": "bg-gradient-to-b from-blue-400 to-blue-600"
-        },
-        {
-            "id": 3,
-            "title": "Total Drivers",
-            "value": Over_View_data?.totals?.total_drivers + " Drivers",
-            "diffValue": Over_View_data?.totals?.total_drivers_diff,
-            "color": "bg-gradient-to-b from-orange-400 to-red-600"
-        },
-        {
-            "id": 4,
-            "title": "Total Passengers",
-            "value": Over_View_data?.totals?.total_passengers + " Passengers",
-            "diffValue": Over_View_data?.totals?.total_passengers_diff,
-            "color": "bg-gradient-to-r from-pink-600 to-red-400"
-        }
-    ]
+    // // ----------- Cards Information Data  ---------------
+    // const All_average_Earnings =[
+    //     {
+    //         "id": 1,
+    //         "title": "TOTAL EARNINGS",
+    //         "value": Over_View_data?.totals?.total_earnings + " SEK",
+    //         "diffValue": Over_View_data?.totals?.total_earnings_diff,
+    //         "color": "bg-gradient-to-b from-green-400 to-teal-600"
+    //     },
+    //     {
+    //         "id": 2,
+    //         "title": "Total Rides",
+    //         "value": Over_View_data?.totals?.total_rides + " Rides",
+    //         "diffValue": Over_View_data?.totals?.total_rides_diff,
+    //         "color": "bg-gradient-to-b from-blue-400 to-blue-600"
+    //     },
+    //     {
+    //         "id": 3,
+    //         "title": "Total Drivers",
+    //         "value": Over_View_data?.totals?.total_drivers + " Drivers",
+    //         "diffValue": Over_View_data?.totals?.total_drivers_diff,
+    //         "color": "bg-gradient-to-b from-orange-400 to-red-600"
+    //     },
+    //     {
+    //         "id": 4,
+    //         "title": "Total Passengers",
+    //         "value": Over_View_data?.totals?.total_passengers + " Passengers",
+    //         "diffValue": Over_View_data?.totals?.total_passengers_diff,
+    //         "color": "bg-gradient-to-r from-pink-600 to-red-400"
+    //     }
+    // ]
 
     return (
         <section className="flex gap-8 flex-col">
@@ -54,7 +54,7 @@ export default async function Home() {
                         <h1 className="font-mono text-[25px] text-main-100 ">Hi, welcome back!</h1>
                         <p className="text-gray-500">Your monitoring dashboard .</p>
                     </div>
-                    <div className="flex items-center gap-8">
+                    {/* <div className="flex items-center gap-8">
                         <div className="flex flex-col gap-3 items-center">
                             <p className="text-gray-500 text-center">Customer Ratings</p>
                             <p className="flex items-center  font-bold text-main-100">
@@ -74,10 +74,10 @@ export default async function Home() {
                             <p className=" font-bold text-[20px]">{Over_View_data?.bar_info?.offline_drivers}</p>
                         </div>
 
-                    </div>
+                    </div> */}
 
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                     {
                         All_average_Earnings?.map((item => {
                             return (
@@ -102,11 +102,11 @@ export default async function Home() {
                             )
                         }))
                     }
-                </div>
+                </div> */}
             </main>
 
             {/* ------------  Tables  ------------------- */}
-            <main className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* <main className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <div className="bg-white rounded-md shadow-md flex flex-col gap-2 p-3 ">
                     <h1 className="font-bold text-[20px] text-main-100">Your Top Drivers</h1>
                     <p className="text-gray-500">Revenue based by drivers</p>
@@ -121,10 +121,10 @@ export default async function Home() {
                         <TableDemo Rows={RecentEarningsRows} headers={headers}/>
                     </div>
                 </div>
-            </main>
+            </main> */}
 
             {/* ------------  Operating Systems and Analyst design  ------------------- */}
-            <main className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* <main className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 <div className="bg-white rounded-md shadow-md flex flex-col gap-2 p-3 col-span-1 md:col-span-2">
                     <h1 className="font-bold text-[20px] text-main-100">Ride status</h1>
                     <p className="text-gray-500">Ride Status track your company rides status from this chart.</p>
@@ -163,7 +163,7 @@ export default async function Home() {
                         <OperatingSystem os={Over_View_data?.devices}/>
                     </div>
                 </div>
-            </main>
+            </main> */}
         </section>
     );
 }

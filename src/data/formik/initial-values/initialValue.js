@@ -1,12 +1,12 @@
 export const initial_value = {
-    company: '',
     car_model: '',
     car_color: '',
     car_number: '',
     car_image:'',
-    is_active: 'false',
-    car_type: 'Economy',
-    is_available: 'false',
+    // is_active: 'false',
+    car_type: '',
+    // is_available: 'false',
+    car_license: '',
 }  
 
 
@@ -20,7 +20,6 @@ export const UpdateCarInitialValue = {
     car_type: "",
     is_active:"",
     is_available:"",
-    company:"",
     created_at:""
 }
 export const ProfileInitialValue = {
